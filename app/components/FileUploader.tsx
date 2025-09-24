@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { formatSize } from "../lib/utils";
 
@@ -40,7 +40,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
               <img src="/images/pdf.png" alt="PDF" className="size-10" />
               <div className="flex items-center space-x-3">
                 <div>
-                  <p className="text-sm font-medium text-gray-700 truncate max-w-0">
+                  <p className="text-sm font-medium text-gray-700 truncate max-w-xs">
                     {file.name}
                   </p>
                   <p className="text-sm text-gray-500">
