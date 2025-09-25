@@ -3,7 +3,7 @@ import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router";
 import FileUploader from "~/components/FileUploader";
 import Navbar from "~/components/Navbar";
-import { convertPdfToImage } from "~/lib/pdfToimage";
+import { convertPdfToImage } from "~/lib/pdfToImage";
 import { usePuterStore } from "~/lib/puter";
 import { generateUUID } from "~/lib/utils";
 
@@ -58,7 +58,7 @@ const Upload = () => {
       feedback: "",
     };
 
-    await kv.set(`resume-${uuid}`, JSON.stringify(data));
+    await kv.set(`resume:${uuid}`, JSON.stringify(data));
     setStatusText("Analyzing resume...");
 
     const feedback = await ai.feedback(
@@ -76,6 +76,7 @@ const Upload = () => {
     await kv.set(`resume-${uuid}`, JSON.stringify(data));
     setStatusText("Analysis complete, redirecting...");
     console.log(data);
+    navigate(`/resume/${uuid}`);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
