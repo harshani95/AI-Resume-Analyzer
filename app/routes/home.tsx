@@ -29,7 +29,7 @@ export default function Home() {
       const resumes = (await kv.list("resume:*", true)) as KVItem[];
 
       const parsedResumes: Resume[] = resumes?.map(
-        (resume) => JSON.parse(resume.value) as Resume
+        (resume) => JSON.parse(resume.value) as Resume,
       );
       console.log("parsedResumes", parsedResumes);
       setResumes(parsedResumes || []);
@@ -69,7 +69,7 @@ export default function Home() {
         )}
 
         {!loadingResumes && resumes.length === 0 && (
-          <div className="flex flex-col items-center justify-center gap-4 mt-10">
+          <div className="flex flex-col items-center justify-center gap-4 mt-8">
             <Link
               to="/upload"
               className="primary-button w-fit text-xl font-semibold"

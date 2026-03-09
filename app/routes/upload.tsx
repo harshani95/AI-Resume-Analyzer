@@ -106,7 +106,7 @@ const Upload = () => {
           <h1>Smart feedback for your dream job</h1>
           {isProcessing ? (
             <>
-              <h2>{statusText}</h2>
+              <h2 className="">{statusText}</h2>
               <img
                 src="/images/resume-scan.gif"
                 alt="scan image"

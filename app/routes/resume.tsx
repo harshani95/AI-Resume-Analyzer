@@ -74,7 +74,7 @@ const Resume = () => {
         </section>
 
         <section className="feedback-secion">
-          <h2 className="text-4xl !text-black font-bold pl-8 pb-2">
+          <h2 className="text-4xl !text-black font-bold pl-8 pb-2 mt-8">
             Resume review
           </h2>
           {feedback ? (
